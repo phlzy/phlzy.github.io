@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Manacher's Algorithm | blog blog blog</title><meta name="author" content="Schwarz"><meta name="copyright" content="Schwarz"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Manacher 算法一般用于解决与回文子串有关的问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manacher&#39;s Algorithm">
+<meta property="og:url" content="https://phlzy.github.io/2020/10/01/Manacher/index.html">
+<meta property="og:site_name" content="blog blog blog">
+<meta property="og:description" content="Manacher 算法一般用于解决与回文子串有关的问题。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://phlzy.github.io/img/butterfly-icon.png">
+<meta property="article:published_time" content="2020-10-01T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-04T07:43:17.188Z">
+<meta property="article:author" content="Schwarz">
+<meta property="article:tag" content="manacher">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://phlzy.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Manacher's Algorithm",
+  "url": "https://phlzy.github.io/2020/10/01/Manacher/",
+  "image": "https://phlzy.github.io/img/butterfly-icon.png",
+  "datePublished": "2020-10-01T00:00:00.000Z",
+  "dateModified": "2025-12-04T07:43:17.188Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Schwarz",
+      "url": "https://phlzy.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://phlzy.github.io/2020/10/01/Manacher/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Manacher\'s Algorithm',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">blog blog blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Manacher's Algorithm</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Manacher's Algorithm</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-10-01T00:00:00.000Z" title="Created 2020-10-01 00:00:00">2020-10-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-12-04T07:43:17.188Z" title="Updated 2025-12-04 07:43:17">2025-12-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/String/">String</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>Manacher 算法一般用于解决与回文子串有关的问题。</p>
+<span id="more"></span>
+
+<p>先从一个简单的问题开始：给定字符串 $s$，其长度为 $n$，求它的最长回文子串。</p>
+<p>容易想到一个 $O(n^2)$ 的暴力算法：枚举每个字符作为回文串的中心的情况，每次尽可能向两边扩展，这样必定可以找到所有的回文串，可以很轻松得到答案。</p>
+<p>这种暴力做法也有一种治标不治本的优化，即二分哈希，可以在 $O(n\log n)$ 时间解决问题。下面来看 Glenn K. Manacher 在1975年提出的巧妙算法。</p>
+<p>在实现上述暴力算法的时候，容易注意到一个事实：长度为奇数的回文串与长度为偶数的回文串是不一样的，需要分开讨论。所以下面先只考虑长度为奇数的情况。</p>
+<p>现在我们设法对之前的暴力算法进行优化。暴力算法之所以复杂度为 $O(n^2)$，是因为它对于每个位置都独立的计算出了以该位置为中心的最长回文子串。那么如何像 KMP 等其他常见字符串算法一样，利用之前得到的信息来优化当前的流程呢？回忆字符串的 border 的概念，回文串也有类似的性质。假设有一个长度为奇数的回文串 $p$，其对称中心在 $x$ 处，左右端点为 $(x-r,x+r)$，那么显然，$\forall t \in[0,r]$，字符串 $[x-r,x-r+2t]$ 和字符串 $[x+r-2t,x+r]$ 相等。</p>
+<p>利用这条性质就可以进行一些优化。假设之前我们找到的右端点最靠右的回文串 $q$ 是 $[l,r]$，当前计算的位置是 $i$，那么有两种可能：</p>
+<ul>
+<li><p>$i\le r$：此时的 $i$ 位于一个回文串的内部，找到 $i$ 在 $q$ 内的对称点 $j$（$j&#x3D;l+r-i$），显然以 $j$ 为中心的最长回文子串 $p_j$ 已经被计算过了。由于 $q$ 是已知的右端点最靠右的回文串，$p_j$ 的右端点必然不超过 $r$。令 $l_j$ 为 $p_j$ 的左端点，取 $l_0&#x3D;\max(l,l_j)$，那么 $p_j$ 与 $q$ 相交的长度为 $2\times(j-l_0)+1$，将这个串对称到右边，就得到了一个以 $i$ 为中心的回文串，并且该回文串的右端点 $r_i$ 不超过 $r$。若 $r_i\lt r$，说明此处的回文串已经找完了，可以开始计算下一位置；否则意味着可以继续向外延伸，那就只能暴力往后找了。</p>
+</li>
+<li><p>$i\gt r$：此时右边的字符都是未知的，没有任何可以利用的信息，只能采用暴力算法进行计算。</p>
+</li>
+</ul>
+<p>奇数长度回文串的问题就此解决了。偶数长度的回文串也可以采用类似的方法解决，但也能用一种简便的方法：在原串的首尾以及所有两个字符的间隔出均插入一个字符集之外的字符，形成一个长度为 $2n+1$ 的新串，则原串内所有长度为偶数的回文串在新串中也变成了长度为奇数的回文串。</p>
+<p>Manacher 算法的代码实现也并不复杂，这里以求字符串 $s$ 的最长回文子串为例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">manacher</span><span class="params">(string &amp;s)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n = s.<span class="built_in">length</span>();</span><br><span class="line">    <span class="function">vector&lt;<span class="type">char</span>&gt; <span class="title">aux</span><span class="params">(<span class="number">2</span> * n + <span class="number">2</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> m = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;&amp;c : s) &#123;</span><br><span class="line">        aux[++m] = <span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">        aux[++m] = c;</span><br><span class="line">    &#125;</span><br><span class="line">    aux[++m] = <span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">    <span class="type">int</span> l = <span class="number">0</span>, r = <span class="number">-1</span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">p</span><span class="params">(m + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= r) &#123;</span><br><span class="line">            <span class="keyword">while</span> (i - p[i] &gt;= <span class="number">0</span> &amp;&amp; i + p[i] &lt;= m &amp;&amp; aux[i - p[i]] == aux[i + p[i]])</span><br><span class="line">                p[i]++;</span><br><span class="line">            l = i - p[i], r = i + p[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> j = l + r - i;</span><br><span class="line">            p[i] = j - <span class="built_in">max</span>(j - p[j], l);</span><br><span class="line">            <span class="keyword">if</span> (i + p[i] == r) &#123;</span><br><span class="line">                <span class="keyword">while</span> (i - p[i] &gt;= <span class="number">0</span> &amp;&amp; i + p[i] &lt;= m &amp;&amp; aux[i - p[i]] == aux[i + p[i]])</span><br><span class="line">                    p[i]++;</span><br><span class="line">                l = i - p[i], r = i + p[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> st = <span class="number">0</span>, len = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p[i] - <span class="number">1</span> &gt; len) &#123;</span><br><span class="line">            len = p[i] - <span class="number">1</span>;</span><br><span class="line">            st = (i - p[i] + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.<span class="built_in">substr</span>(st, len);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可能最容易出错的部分是从新串映射回原串的过程，如果下标不从 $0$ 开始就是另一种写法了。</p>
+<p>虽然 Manacher 算法在很多情况下都会去暴力的扩展，但它的时间复杂度依然是 $O(n)$，因为每次暴力扩展都会导致 $r$ 的改变，而 $r$ 只增不减，且不会超过 $2n+1$，所以暴力扩展的次数是 $O(n)$ 的。</p>
+<ul>
+<li>84758431</li>
+</ul>
+<p><img src="https://i.loli.net/2020/12/10/yBUpl1i3DhwJMYx.jpg" alt="84758431.jpg"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://phlzy.github.io">Schwarz</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://phlzy.github.io/2020/10/01/Manacher/">https://phlzy.github.io/2020/10/01/Manacher/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/manacher/">manacher</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2021/05/09/ubuntu_config/" title="Configuration of Ubuntu"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Configuration of Ubuntu</div></div><div class="info-2"><div class="info-item-1">Ubuntu 配置   准备工作首先装好系统，记得在软件和更新里换源。 然后装 Chrome，搜狗拼音输入法，Clash，都照着教程来就好了。 这三个是一定要先装好的。 个性化先安装 Gnome-Tweak-Tool： 12sudo apt-get updatesudo apt-get install gnome-tweak-tool  然后打开，可以在桌面一栏选择是否显示图标，在窗口一栏选择按钮位置等。我还是习惯默认的设置。 这时外观栏中的 Shell 应该是灰色的，需要先装一个扩展： 1sudo apt-get install gnome-shell-extensions  然后重新打开，在扩展栏中打开 User themes 按钮。 理论上 Shell 那边已经好了，但我实际操作中还是灰色的。这时需要再装一个浏览器扩展： 1sudo apt install chrome-gnome-shell  然后 Chrome 打开 这个网址，启用插件。再重新开一遍 Gnome-Tweak-Tool 就好了。 接下来就可以装主题了。 我这次装的是 这个，进去在 File 标签下面下载压...</div></div></div></a><a class="pagination-related" href="/2020/02/12/AVL_Tree/" title="AVL tree"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">AVL tree</div></div><div class="info-2"><div class="info-item-1">简介：AVL树是最先发明的自平衡二叉查找树。AVL树高度平衡，其任意节点左右子树的高度差不超过1。同时它也拥有普通二叉查找树的性质，即每个节点左子树上所有节点的值均小于根节点的值，右子树上所有节点的值均大于根节点的值，且不同节点的值均不同。   实现过程平衡因子：每个节点左子树和右子树的高度差。若所有节点平衡因子的绝对值均不超过1则平衡。 使用一个结构体保存节点的键值、频数、以该点为根的树的树高和大小以及左右子树。当树不平衡时，可以通过旋转使树平衡。 123456789struct AVL_node;typedef AVL_node *AVL_Tree;struct AVL_node&#123;    int value, height, freq, size;    AVL_Tree ls, rs;    AVL_node() : value(0), height(1), freq(1), size(1), ls(nullptr), rs(nullptr) &#123;&#125;    AVL_node(int n) : value(n), height(1), freq(1...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Schwarz</div><div class="author-info-description">description</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/18/CO1/" title="CO1">CO1</a><time datetime="2023-07-18T00:00:00.000Z" title="Created 2023-07-18 00:00:00">2023-07-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/08/ANT_1/" title="算法数论摘录">算法数论摘录</a><time datetime="2023-05-08T00:00:00.000Z" title="Created 2023-05-08 00:00:00">2023-05-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/02/GYM104081/" title="GYM104081">GYM104081</a><time datetime="2023-05-02T00:00:00.000Z" title="Created 2023-05-02 00:00:00">2023-05-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/30/gf_0/" title="Generating Function">Generating Function</a><time datetime="2023-04-30T00:00:00.000Z" title="Created 2023-04-30 00:00:00">2023-04-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/29/JSCPC2021/" title="JSCPC2021">JSCPC2021</a><time datetime="2023-04-29T00:00:00.000Z" title="Created 2023-04-29 00:00:00">2023-04-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By Schwarz</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><div class="js-pjax"></div><script async data-pjax src="/"></script></div></body></html>

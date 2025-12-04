@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Configuration of Ubuntu | blog blog blog</title><meta name="author" content="Schwarz"><meta name="copyright" content="Schwarz"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Ubuntu 配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Configuration of Ubuntu">
+<meta property="og:url" content="https://phlzy.github.io/2021/05/09/ubuntu_config/index.html">
+<meta property="og:site_name" content="blog blog blog">
+<meta property="og:description" content="Ubuntu 配置">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://phlzy.github.io/img/butterfly-icon.png">
+<meta property="article:published_time" content="2021-05-09T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-04T07:43:17.188Z">
+<meta property="article:author" content="Schwarz">
+<meta property="article:tag" content="ubuntu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://phlzy.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Configuration of Ubuntu",
+  "url": "https://phlzy.github.io/2021/05/09/ubuntu_config/",
+  "image": "https://phlzy.github.io/img/butterfly-icon.png",
+  "datePublished": "2021-05-09T00:00:00.000Z",
+  "dateModified": "2025-12-04T07:43:17.188Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Schwarz",
+      "url": "https://phlzy.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://phlzy.github.io/2021/05/09/ubuntu_config/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Configuration of Ubuntu',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">blog blog blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Configuration of Ubuntu</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Configuration of Ubuntu</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-05-09T00:00:00.000Z" title="Created 2021-05-09 00:00:00">2021-05-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-12-04T07:43:17.188Z" title="Updated 2025-12-04 07:43:17">2025-12-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Tutorial/">Tutorial</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>Ubuntu 配置</p>
+<span id="more"></span>
+
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>首先装好系统，记得在<strong>软件和更新</strong>里换源。</p>
+<p>然后装 Chrome，搜狗拼音输入法，Clash，都照着教程来就好了。</p>
+<p>这三个是一定要先装好的。</p>
+<h1 id="个性化"><a href="#个性化" class="headerlink" title="个性化"></a>个性化</h1><p>先安装 Gnome-Tweak-Tool：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install gnome-tweak-tool</span><br></pre></td></tr></table></figure>
+
+<p>然后打开，可以在桌面一栏选择是否显示图标，在窗口一栏选择按钮位置等。我还是习惯默认的设置。</p>
+<p>这时外观栏中的 Shell 应该是灰色的，需要先装一个扩展：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gnome-shell-extensions</span><br></pre></td></tr></table></figure>
+
+<p>然后重新打开，在扩展栏中打开 User themes 按钮。</p>
+<p>理论上 Shell 那边已经好了，但我实际操作中还是灰色的。这时需要再装一个浏览器扩展：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install chrome-gnome-shell</span><br></pre></td></tr></table></figure>
+
+<p>然后 Chrome 打开 <a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/19/user-themes/">这个网址</a>，启用插件。再重新开一遍 Gnome-Tweak-Tool 就好了。</p>
+<p>接下来就可以装主题了。</p>
+<p>我这次装的是 <a target="_blank" rel="noopener" href="https://www.opendesktop.org/s/Gnome/p/1241688">这个</a>，进去在 File 标签下面下载压缩文件，通过以下两个命令解压：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xz -d filename.tar.xz</span><br><span class="line">tar xvf filename.tar</span><br></pre></td></tr></table></figure>
+
+<p>就会获得一个文件夹。在下载文件夹中打开终端，<code>sudo mv filename /usr/share/themes</code> 就好了。</p>
+<p>现在打开 Tweaks 就可以选择刚才装好的主题。</p>
+<p>图标的修改方法类似，<a target="_blank" rel="noopener" href="https://www.opendesktop.org/s/Gnome/p/1102582/">网址</a>，解压后放到 <code>/usr/share/icons</code> 里面。</p>
+<p>修改 Shell：<a target="_blank" rel="noopener" href="https://www.opendesktop.org/s/Gnome/p/1013741/">网址</a>，解压后放到 <code>/usr/share/themes</code> 里面。</p>
+<p>再去 Ubuntu 软件里安装 Dash to Dock 和 Coverflow Alt-Tab，在扩展里打开相应的开关，自定义设置即可。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/feipeng8848/p/8970556.html">更深入的美化教程</a></p>
+<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><h1 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h1><h3 id="caffeine"><a href="#caffeine" class="headerlink" title="caffeine"></a>caffeine</h3><p>阻止休眠的小插件，非常好用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:eugenesan/ppa</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install caffeine -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="copyq"><a href="#copyq" class="headerlink" title="copyq"></a>copyq</h3><p>评价很好的剪贴板管理软件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:hluk/copyq </span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install copyq</span><br></pre></td></tr></table></figure>
+
+<h3 id="neofetch"><a href="#neofetch" class="headerlink" title="neofetch"></a>neofetch</h3><p>看系统状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:dawidd0811/neofetch </span><br><span class="line">sudo apt-get update </span><br><span class="line">sudo apt-get install neofetch</span><br></pre></td></tr></table></figure>
+
+<p>装完执行 <code>neofetch</code> 命令可以看到很多东西。当然还有更高级的用法。</p>
+<h3 id="shutter"><a href="#shutter" class="headerlink" title="shutter"></a>shutter</h3><p>截图软件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install shutter</span><br></pre></td></tr></table></figure>
+
+<p>应该可以设置快捷键，懒得搞了。</p>
+<h3 id="simplescreenrecorder"><a href="#simplescreenrecorder" class="headerlink" title="simplescreenrecorder"></a>simplescreenrecorder</h3><p>录屏软件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install simplescreenrecorder</span><br></pre></td></tr></table></figure>
+
+<h3 id="VLC"><a href="#VLC" class="headerlink" title="VLC"></a>VLC</h3><p>播放器，先要装一个 snap</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install snapd</span><br><span class="line">sudo snap install vlc</span><br></pre></td></tr></table></figure>
+
+<h3 id="filezilla"><a href="#filezilla" class="headerlink" title="filezilla"></a>filezilla</h3><p>FTP 客户端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install filezilla</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">sudo</span> apt-get install filezilla-locales</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+
+<h2 id="typora"><a href="#typora" class="headerlink" title="typora"></a>typora</h2><p>打开 <a target="_blank" rel="noopener" href="https://www.typora.io/">官网</a> 照教程来就行了。</p>
+<h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><p>去官网直接下载会非常慢并且很容易失败，找到下载链接后将网址：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://az764295.vo.msecnd.net/stable/cfa2e218100323074ac1948c885448fdf4de2a7f/code_1.56.0-1620166262_amd64.deb</span><br></pre></td></tr></table></figure>
+
+<p>改成这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://vscode.cdn.azure.cn/stable/cfa2e218100323074ac1948c885448fdf4de2a7f/code_1.56.0-1620166262_amd64.deb</span><br></pre></td></tr></table></figure>
+
+<p>就解决了。</p>
+<p><strong>插件</strong>：</p>
+<ul>
+<li>Chinese</li>
+<li>One Dark Pro</li>
+<li>C&#x2F;C++</li>
+<li>C++ Intellisense</li>
+<li>Code Runner 记得开 run in terminal</li>
+<li>Bracket Pair Colorizer 2 </li>
+<li>Python</li>
+<li>TabOut</li>
+</ul>
+<p>最主要的就这些。字体装一下 JetBrains Mono，大小 20</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;JetBrains Mono&#x27;, &#x27;monospace&#x27;, monospace, &#x27;JetBrains Mono&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><p>zsh、fish 之类的都很不错，等以后学会了再写。</p>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="C-C"><a href="#C-C" class="headerlink" title="C&#x2F;C++"></a>C&#x2F;C++</h2><p>先看看有没有：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc --version</span><br><span class="line">g++ --version</span><br></pre></td></tr></table></figure>
+
+<p>很遗憾，并没有：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc</span><br><span class="line">sudo apt-get install g++</span><br></pre></td></tr></table></figure>
+
+<p>现在装的两个都是 7.5.0 版本的。</p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>python3 已经有了，没有的话 <code>sudo apt install python3</code>。</p>
+<h2 id="LaTex"><a href="#LaTex" class="headerlink" title="LaTex"></a>LaTex</h2><p>有空再装。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://phlzy.github.io">Schwarz</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://phlzy.github.io/2021/05/09/ubuntu_config/">https://phlzy.github.io/2021/05/09/ubuntu_config/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ubuntu/">ubuntu</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2022/07/22/KM/" title="Kuhn–Munkres Algorithm"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Kuhn–Munkres Algorithm</div></div><div class="info-2"><div class="info-item-1">二分图匹配问题与 KM 算法   二分图匹配的概念很容易理解：假设现在有一个二分图 $G&#x3D;(V,E)$，对于它的一个子图 $M&#x3D;(V_M,E_M)$，如果边集 $E_M$ 的所有边均没有共同的顶点，$M$ 就是 $G$ 的一个匹配。 对于一个匹配 $M$，其边数 $|E_M|$ 就是匹配数。二分图的最大匹配问题就是让你找出一个匹配数最大的匹配。 增广路在找最大匹配之前，先尝试解决一个简单的问题：如果当前找到的匹配有优化的空间（存在更大的匹配），如何优化当前解？ 如果这个问题可以比较简便的解决，那么就能够一步步得到最大匹配了。 我们定义交错路径为这样的一种路径：从一个未匹配点出发，交替经过非匹配边与匹配边形成的路径。 定义增广路为终点也是非匹配边的交错路径。 容易发现，只要把增广路里的匹配边变成非匹配边，非匹配边变成匹配边，那么就增加了一个匹配。这就是增广的过程。 Berge’s lemma：匹配 $M$ 为图 $G&#x3D;(V, E)$ 的最大匹配当且仅当 $G$ 中不存在 $M$-增广路。 必要性是显而易见的，用反证法很容易证明。 不太严谨地证明一下充分...</div></div></div></a><a class="pagination-related" href="/2020/10/01/Manacher/" title="Manacher's Algorithm"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Manacher's Algorithm</div></div><div class="info-2"><div class="info-item-1">Manacher 算法一般用于解决与回文子串有关的问题。   先从一个简单的问题开始：给定字符串 $s$，其长度为 $n$，求它的最长回文子串。 容易想到一个 $O(n^2)$ 的暴力算法：枚举每个字符作为回文串的中心的情况，每次尽可能向两边扩展，这样必定可以找到所有的回文串，可以很轻松得到答案。 这种暴力做法也有一种治标不治本的优化，即二分哈希，可以在 $O(n\log n)$ 时间解决问题。下面来看 Glenn K. Manacher 在1975年提出的巧妙算法。 在实现上述暴力算法的时候，容易注意到一个事实：长度为奇数的回文串与长度为偶数的回文串是不一样的，需要分开讨论。所以下面先只考虑长度为奇数的情况。 现在我们设法对之前的暴力算法进行优化。暴力算法之所以复杂度为 $O(n^2)$，是因为它对于每个位置都独立的计算出了以该位置为中心的最长回文子串。那么如何像 KMP 等其他常见字符串算法一样，利用之前得到的信息来优化当前的流程呢？回忆字符串的 border 的概念，回文串也有类似的性质。假设有一个长度为奇数的回文串 $p$，其对称中心在 $x$ 处，左右端点为 $(x-r...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Schwarz</div><div class="author-info-description">description</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AA%E6%80%A7%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">个性化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">软件安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E5%B7%A5%E5%85%B7"><span class="toc-number">4.</span> <span class="toc-text">小工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#caffeine"><span class="toc-number">4.0.1.</span> <span class="toc-text">caffeine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#copyq"><span class="toc-number">4.0.2.</span> <span class="toc-text">copyq</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#neofetch"><span class="toc-number">4.0.3.</span> <span class="toc-text">neofetch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shutter"><span class="toc-number">4.0.4.</span> <span class="toc-text">shutter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#simplescreenrecorder"><span class="toc-number">4.0.5.</span> <span class="toc-text">simplescreenrecorder</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VLC"><span class="toc-number">4.0.6.</span> <span class="toc-text">VLC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filezilla"><span class="toc-number">4.0.7.</span> <span class="toc-text">filezilla</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git"><span class="toc-number">4.1.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#typora"><span class="toc-number">4.2.</span> <span class="toc-text">typora</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vscode"><span class="toc-number">4.3.</span> <span class="toc-text">vscode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell"><span class="toc-number">4.4.</span> <span class="toc-text">shell</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-C"><span class="toc-number">5.1.</span> <span class="toc-text">C&#x2F;C++</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python"><span class="toc-number">5.2.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LaTex"><span class="toc-number">5.3.</span> <span class="toc-text">LaTex</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/18/CO1/" title="CO1">CO1</a><time datetime="2023-07-18T00:00:00.000Z" title="Created 2023-07-18 00:00:00">2023-07-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/08/ANT_1/" title="算法数论摘录">算法数论摘录</a><time datetime="2023-05-08T00:00:00.000Z" title="Created 2023-05-08 00:00:00">2023-05-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/02/GYM104081/" title="GYM104081">GYM104081</a><time datetime="2023-05-02T00:00:00.000Z" title="Created 2023-05-02 00:00:00">2023-05-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/30/gf_0/" title="Generating Function">Generating Function</a><time datetime="2023-04-30T00:00:00.000Z" title="Created 2023-04-30 00:00:00">2023-04-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/29/JSCPC2021/" title="JSCPC2021">JSCPC2021</a><time datetime="2023-04-29T00:00:00.000Z" title="Created 2023-04-29 00:00:00">2023-04-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By Schwarz</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><div class="js-pjax"></div><script async data-pjax src="/"></script></div></body></html>
