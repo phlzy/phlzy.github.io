@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>分数规划 | blog blog blog</title><meta name="author" content="Schwarz"><meta name="copyright" content="Schwarz"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="分数规划问题一般表现为求一个分式的极值。 123456789101112131415161718192021222324252627282930313233343536373839#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;int main() &#123;    ios::sync_with_stdio(false);    cin.tie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分数规划">
+<meta property="og:url" content="https://phlzy.github.io/2023/04/05/frac_programming/index.html">
+<meta property="og:site_name" content="blog blog blog">
+<meta property="og:description" content="分数规划问题一般表现为求一个分式的极值。 123456789101112131415161718192021222324252627282930313233343536373839#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;int main() &#123;    ios::sync_with_stdio(false);    cin.tie">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://phlzy.github.io/img/butterfly-icon.png">
+<meta property="article:published_time" content="2023-04-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-06T15:04:20.169Z">
+<meta property="article:author" content="Schwarz">
+<meta property="article:tag" content="algorithm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://phlzy.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "分数规划",
+  "url": "https://phlzy.github.io/2023/04/05/frac_programming/",
+  "image": "https://phlzy.github.io/img/butterfly-icon.png",
+  "datePublished": "2023-04-05T16:00:00.000Z",
+  "dateModified": "2023-04-06T15:04:20.169Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Schwarz",
+      "url": "https://phlzy.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://phlzy.github.io/2023/04/05/frac_programming/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '分数规划',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">blog blog blog</span></a><a class="nav-page-title" href="/"><span class="site-name">分数规划</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">分数规划</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-04-05T16:00:00.000Z" title="Created 2023-04-05 16:00:00">2023-04-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-04-06T15:04:20.169Z" title="Updated 2023-04-06 15:04:20">2023-04-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Algorithm-and-DataStructure/">Algorithm and DataStructure</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>分数规划问题一般表现为求一个分式的极值。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="type">int</span> n, W;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; W;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">b</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="type">double</span> l = <span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        cin &gt;&gt; b[i] &gt;&gt; a[i];</span><br><span class="line">        r = <span class="built_in">max</span>(r, <span class="number">1.0</span> * a[i] / b[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">double</span> ans;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">double</span>&gt; <span class="title">dp</span><span class="params">(W + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">auto</span> check = [&amp;](<span class="type">double</span> mid) -&gt; <span class="type">bool</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= W; ++i)</span><br><span class="line">            dp[i] = <span class="number">-1e9</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = W; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">                <span class="type">int</span> k = <span class="built_in">min</span>(W, j + b[i]);</span><br><span class="line">                dp[k] = <span class="built_in">max</span>(dp[k], dp[j] + a[i] - mid * b[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[W] &gt; <span class="number">0</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> T = <span class="number">1</span>; T &lt;= <span class="number">100</span>; ++T) &#123;</span><br><span class="line">        <span class="type">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid))</span><br><span class="line">            ans = mid, l = mid;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = mid;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">fabs</span>(r - l) &lt; <span class="number">1e-6</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; (<span class="type">int</span>) (ans * <span class="number">1000</span>) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://phlzy.github.io">Schwarz</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://phlzy.github.io/2023/04/05/frac_programming/">https://phlzy.github.io/2023/04/05/frac_programming/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/algorithm/">algorithm</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/04/29/JSCPC2021/" title="JSCPC2021"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">JSCPC2021</div></div><div class="info-2"><div class="info-item-1">今天不想干活，就体验了一下 JSCPC2021。 最终 6 题 980 罚时，居然还不是同题数罚时最大的，大 胜 利。 下面来记一下流水账。 上来先跟榜过了 A，非常顺利。 然后发现 I 似乎也是签到，再一看确实很简单，然后就连 WA 6 发。后来才发现是输入爆 int 了。。。 然后是 K，感觉很容易猜到一个结论，就是长为 $k$ 的连续段最先出现在 $2^k-1$ 加入序列之后。那么打表就行了。但是数据范围看成 $1\times 10^8$ 了，又来两发罚时。。。 这个时候感觉状态很不好，看 C 又像是需要分类讨论的贪心，而 J 第一遍没看明白，就有点不想写了。 过了一会又回来看 C，感觉最容易想到的从高到低贪心的想法似乎无懈可击，实现起来也并不复杂，就写了一下，然后过了。 回头再去看 J，又读了一遍题，诶，这不是只要一个 tag 就够了吗，直接二分图染色。写完能过样例，直接一交，然后才发现忘记取少的那部分打标记了。 现在从榜上来看应该尝试 D，但我还是把别的几个题也大致看了一下。 D 是一个看上去很恶心的构造，而 H 是一个字符串题，一眼看上去也没有思路。B 和 L 难度更...</div></div></div></a><a class="pagination-related" href="/2022/08/08/HRBUST2022/" title="2022 HRBUST Summer Trainning"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">2022 HRBUST Summer Trainning</div></div><div class="info-2"><div class="info-item-1">Mediocre problems.    link A统计一下连续段，然后前缀和处理即可。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include &lt;bits/stdc++.h&gt;using namespace std;using ll = long long;#define endl &#x27;\n&#x27;#define pb push_backvoid solve() &#123;    string s;    cin &gt;&gt; s;    vector&lt;ll&gt; a;    int cnt = 0;    for (auto &amp;&amp;c : s) &#123;        if (c == &#x27;1&#x27;)            cnt++;        else if (cnt)            a.pb(cnt), cnt = 0;    &#125; ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2022/07/22/KM/" title="Kuhn–Munkres Algorithm"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-22</div><div class="info-item-2">Kuhn–Munkres Algorithm</div></div><div class="info-2"><div class="info-item-1">二分图匹配问题与 KM 算法   二分图匹配的概念很容易理解：假设现在有一个二分图 $G&#x3D;(V,E)$，对于它的一个子图 $M&#x3D;(V_M,E_M)$，如果边集 $E_M$ 的所有边均没有共同的顶点，$M$ 就是 $G$ 的一个匹配。 对于一个匹配 $M$，其边数 $|E_M|$ 就是匹配数。二分图的最大匹配问题就是让你找出一个匹配数最大的匹配。 增广路在找最大匹配之前，先尝试解决一个简单的问题：如果当前找到的匹配有优化的空间（存在更大的匹配），如何优化当前解？ 如果这个问题可以比较简便的解决，那么就能够一步步得到最大匹配了。 我们定义交错路径为这样的一种路径：从一个未匹配点出发，交替经过非匹配边与匹配边形成的路径。 定义增广路为终点也是非匹配边的交错路径。 容易发现，只要把增广路里的匹配边变成非匹配边，非匹配边变成匹配边，那么就增加了一个匹配。这就是增广的过程。 Berge’s lemma：匹配 $M$ 为图 $G&#x3D;(V, E)$ 的最大匹配当且仅当 $G$ 中不存在 $M$-增广路。 必要性是显而易见的，用反证法很容易证明。 不太严谨地证明一下充分...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Schwarz</div><div class="author-info-description">description</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/17/CO1/" title="CO1">CO1</a><time datetime="2023-07-17T16:00:00.000Z" title="Created 2023-07-17 16:00:00">2023-07-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/07/ANT_1/" title="算法数论摘录">算法数论摘录</a><time datetime="2023-05-07T16:00:00.000Z" title="Created 2023-05-07 16:00:00">2023-05-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/01/GYM104081/" title="GYM104081">GYM104081</a><time datetime="2023-05-01T16:00:00.000Z" title="Created 2023-05-01 16:00:00">2023-05-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/29/gf_0/" title="Generating Function">Generating Function</a><time datetime="2023-04-29T16:00:00.000Z" title="Created 2023-04-29 16:00:00">2023-04-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/29/JSCPC2021/" title="JSCPC2021">JSCPC2021</a><time datetime="2023-04-29T00:00:00.000Z" title="Created 2023-04-29 00:00:00">2023-04-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By Schwarz</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><div class="js-pjax"></div><script async data-pjax src="/"></script></div></body></html>
