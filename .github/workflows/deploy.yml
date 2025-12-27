@@ -3,7 +3,7 @@ name: Deploy Hexo to Pages
 on:
   push:
     branches:
-      - master # 确认这是你的源码分支名
+      - main # 确认这是你的源码分支名
 
 jobs:
   build-and-deploy:
