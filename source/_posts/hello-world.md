@@ -1,5 +1,9 @@
 ---
-title: Hello World
+title: AVL tree
+date: 2020-02-12
+tag: [data structure]
+category: [Algorithm and DataStructure]
+math: true
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
@@ -41,3 +45,13 @@ test
 $$
 \int_{i=1}^{\varphi}\frac{114514}{1919810+\arcsin x}dy
 $$
+数学公式测试
+
+数字
+
+$1$
+
+字母
+
+$\varpi+\nabla T=\mathscr{S}$
+
