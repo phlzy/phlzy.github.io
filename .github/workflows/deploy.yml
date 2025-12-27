@@ -1,9 +1,9 @@
-name: Deploy Hexo to Pages
+name: Deploy Hexo
 
 on:
   push:
     branches:
-      - main # 确认这是你的源码分支名
+      - main # 确保这里是你存放源码的分支名
 
 jobs:
   build-and-deploy:
@@ -18,7 +18,14 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      # === 新增的关键步骤：安装 Pandoc 软件 ===
+      # 如果不加这一步，hexo-renderer-pandoc 会报错
+      - name: Install Pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+      # ======================================
+
       - name: Install dependencies
+        # 这一步会下载 package.json 里记录的 hexo-theme-fluid 和 hexo-renderer-pandoc
         run: npm install
 
       - name: Build
@@ -36,7 +43,6 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages

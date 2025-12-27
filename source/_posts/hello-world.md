@@ -3,7 +3,7 @@ title: test
 date: 2025-02-12
 math: true
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the ans11111wer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+Welcome to [Hexo](https://hexo.io/)! 测试！
 
 
 <!--more-->
@@ -11,38 +11,11 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ## Quick Start
 
-### Create a new post
+### 行内公式 
 
-``` bash
-$ hexo new "My New Post"
-```
+这有一个行内公式 $E=mc^2$。 ### 行间公式 (块级公式) 下面是一个复杂的行间公式，在 Butterfly 里可能显示不出来： $$ \frac{\partial u}{\partial t} = h^2 \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right) $$ 测试结束。
 
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-test
-
+测试
 
 $$
 \int_{i=1}^{\varphi}\frac{114514}{1919810+\arcsin x}dy

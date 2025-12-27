@@ -1,0 +1,12 @@
+# _config.fluid.yml 的内容
+
+# 文章页相关配置
+post:
+  math:
+    enable: true  # 开启数学公式支持
+    engine: mathjax # 使用 MathJax 引擎 (比 Katex 更强大，兼容性更好)
+    specific: true # 建议开启：只有在文章开头写了 math: true 才加载脚本，提升网站速度
+
+# 以下是可选的美化配置，你可以稍后调整
+navbar:
+  blog_title: 我的 Fluid 博客 # 导航栏左侧的标题

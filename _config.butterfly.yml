@@ -6,7 +6,19 @@ math:
   mathjax:
     # 默认通常无需修改，确保 cdn 指向正确
     src: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  
+
+inject:
+  head:
+    - <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+    - |
+      <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+      </script>
+
 highlight_theme: mac light # 可选 mac, mac light, ocean, etc.
 code_word_wrap: true       # 自动换行
 code_copy: true            # 显示复制按钮
