@@ -1,7 +1,11 @@
-# 数学公式配置
+# Note: Butterfly supports MathJax and KaTeX.
+# You can choose one of them.
 math:
-  use: MathJax  # 或者使用 KaTeX，推荐 MathJax 兼容性更好
-  per_page: true # 设为 true 后，只有在文章开头写了 math: true 的文章才会加载
+  use: MathJax   # 设置为 MathJax
+  per_page: true # 如果设为 true，则只有 front-matter 中 math: true 的文章才会加载
+  mathjax:
+    # 默认通常无需修改，确保 cdn 指向正确
+    src: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   
 highlight_theme: mac light # 可选 mac, mac light, ocean, etc.
 code_word_wrap: true       # 自动换行
