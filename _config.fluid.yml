@@ -16,8 +16,13 @@ navbar:
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
   
 index:
-  banner_img: /img/default.png # 首页大图
-  text: "测试首页显示的打字机文字" # 首页显示的打字机文字
+  banner_img: /img/default.jpg # 首页大图
+  slogan:
+    enable: true
+
+    # 为空则按 hexo config.subtitle 显示
+    # If empty, text based on `subtitle` in hexo config
+    text: "测试首页显示的打字机文字" # 首页显示的打字机文字
   
 favicon: /img/fluid.png
 
