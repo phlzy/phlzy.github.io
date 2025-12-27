@@ -1,0 +1,8 @@
+# 数学公式配置
+math:
+  use: MathJax  # 或者使用 KaTeX，推荐 MathJax 兼容性更好
+  per_page: true # 设为 true 后，只有在文章开头写了 math: true 的文章才会加载
+  
+highlight_theme: mac light # 可选 mac, mac light, ocean, etc.
+code_word_wrap: true       # 自动换行
+code_copy: true            # 显示复制按钮
