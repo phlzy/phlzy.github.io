@@ -41,7 +41,9 @@ $$
 
 ## 三种约束类型
 
-**Bandits with Knapsacks**（BwK，背包约束）中，每次 pull 在获得奖励同时产生资源消耗，设有 $K$ 种资源，每种资源 $k$ 的总预算为 $B_k$，定义资源向量
+### Bandits with Knapsacks（BwK，背包约束）
+
+每次 pull 在获得奖励同时产生资源消耗，设有 $K$ 种资源，每种资源 $k$ 的总预算为 $B_k$，定义资源向量
 $$
 \lambda_i = (\lambda_{1,i},\dots,\lambda_{K,i}), \quad \lambda_{k,i}\ge 0
 $$
@@ -60,7 +62,9 @@ $$
 \boldsymbol{g}_k(\boldsymbol{a}(t)) = \lambda_k^\top \boldsymbol{a}(t) - \frac{B_k}{T}
 $$
 
-**Bandits with Fairness Constraints**（个体公平约束）要求每个臂 $i$ 在长期内至少被拉一定比例 $r_i$，形如
+### Bandits with Fairness Constraints（个体公平约束）
+
+要求每个臂 $i$ 在长期内至少被拉一定比例 $r_i$，形如
 $$
 \frac{1}{T} h_i(T) \ge r_i, \quad \forall i
 $$
@@ -76,7 +80,7 @@ $$
 $$
 \boldsymbol{g}(\boldsymbol{a}(t)) = -\boldsymbol{a}(t) + r
 $$
-**Bandits with Group Fairness Constraints**（群体公平约束）
+### Bandits with Group Fairness Constraints（群体公平约束）
 
 臂被划分为若干组 $G_1,\dots,G_J$，公平性约束施加在组上，形如
 
