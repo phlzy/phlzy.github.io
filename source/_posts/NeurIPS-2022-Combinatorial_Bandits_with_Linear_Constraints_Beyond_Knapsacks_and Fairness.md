@@ -1,5 +1,5 @@
 ---
-title: Combinatorial Bandits with Linear Constraints: Beyond Knapsacks and Fairness
+title: Combinatorial Bandits with Linear Constraints Beyond Knapsacks and Fairness
 date: 2026-01-04
 tags: [bandits]
 categories: [Literature Review]

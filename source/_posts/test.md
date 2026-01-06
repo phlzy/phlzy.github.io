@@ -19,3 +19,5 @@ git commit -m "......"
 git push origin main
 ```
 
+`title` 中不要出现 `:`
+
