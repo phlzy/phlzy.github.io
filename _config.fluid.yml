@@ -9,8 +9,10 @@
 #        font: 'mathjax-tex' # 这是最接近标准 LaTeX 的字体
 #        displayOverflow: 'overflow' # 手机端过长公式允许左右滑动
 #    specific: true # 建议开启：只有在文章开头写了 math: true 才加载脚本，提升网站速度
-    
-# 确保这里是唯一的 post 节点
+
+pjax:
+  enable: false
+
 post:
   math:
     enable: true
