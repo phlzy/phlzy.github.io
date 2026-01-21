@@ -10,26 +10,24 @@
 #        displayOverflow: 'overflow' # 手机端过长公式允许左右滑动
 #    specific: true # 建议开启：只有在文章开头写了 math: true 才加载脚本，提升网站速度
     
+# 确保这里是唯一的 post 节点
 post:
   math:
     enable: true
     engine: mathjax
     specific: true
     mathjax:
-      # 这里使用 MathJax 3 的全局配置对象
-      options:
-        # 允许识别的公式标签
-        processHtmlClass: 'tex2jax_process|math'
-      loader:
-        load: ['output/chtml', '[tex]/ams']
+      # 1. 强制使用 MathJax 3 的“现代”字体，这最接近你图片里的效果
+      output:
+        font: 'mathjax-modern' 
+        displayOverflow: 'overflow'
+      # 2. 确保渲染器能识别并正确处理行间公式
       tex:
         inlineMath: [['$', '$'], ['\\(', '\\)']]
         displayMath: [['$$', '$$'], ['\\[', '\\]']]
-        tags: 'ams' # 允许公式自动编号
-      chtml:
-        # 重点：强制输出为标准的 TeX 字体
-        fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2'
-        adaptiveFontConfig: true
+        # 允许使用复杂的 LaTeX 扩展，渲染图片里的定义符号和花体
+        packages: {'[+]': ['ams', 'base', 'configmacros']}
+
 # 以下是可选的美化配置，你可以稍后调整
 navbar:
   blog_title: "Maelstrom Portal" # 导航栏左侧的标题
