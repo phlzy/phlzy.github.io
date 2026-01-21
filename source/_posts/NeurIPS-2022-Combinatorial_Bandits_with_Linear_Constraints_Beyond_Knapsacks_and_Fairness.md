@@ -8,7 +8,7 @@ math: true
 
 
 
-[本文](https://proceedings.neurips.cc/paper_files/paper/2022/hash/13f17f74ec061f1e3e231aca9a43ff23-Abstract-Conference.html) 率先研究了具有长期线性约束的组合 Bandit 问题，统一了背包约束、公平约束与群体公平约束三种约束形式的问题，提出了 UCB-LP 算法与一个低复杂度版本，并证明了这些算法的 regret bound 与 violation。
+[该研究](https://proceedings.neurips.cc/paper_files/paper/2022/hash/13f17f74ec061f1e3e231aca9a43ff23-Abstract-Conference.html) 率先研究了具有长期线性约束的组合 Bandit 问题，统一了背包约束、公平约束与群体公平约束三种约束形式的问题，提出了 UCB-LP 算法与一个低复杂度版本，并证明了这些算法的 regret bound 与 violation。
 
 
 
@@ -58,6 +58,7 @@ $$
 
 
 将预算均摊到每一轮，可写成长期线性约束
+
 $$
 \boldsymbol{g}_k(\boldsymbol{a}(t)) = \lambda_k^\top \boldsymbol{a}(t) - \frac{B_k}{T}
 $$
@@ -80,6 +81,7 @@ $$
 $$
 \boldsymbol{g}(\boldsymbol{a}(t)) = -\boldsymbol{a}(t) + r
 $$
+
 ### Bandits with Group Fairness Constraints（群体公平约束）
 
 臂被划分为若干组 $G_1,\dots,G_J$，公平性约束施加在组上，形如

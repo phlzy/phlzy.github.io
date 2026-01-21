@@ -1,5 +1,5 @@
 ---
-title: test
+title: 杂项
 date: 2025-12-27
 tags: [others]
 categories: [misc]
@@ -7,8 +7,7 @@ math: true
 ---
 
 
-测试
-
+一些乱七八糟的东西
 
 <!--more-->
 
