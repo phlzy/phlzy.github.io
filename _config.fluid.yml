@@ -10,8 +10,40 @@
 #        displayOverflow: 'overflow' # 手机端过长公式允许左右滑动
 #    specific: true # 建议开启：只有在文章开头写了 math: true 才加载脚本，提升网站速度
 
-pjax:
-  enable: false
+#pjax:
+#  enable: false
+
+inject:
+  head:
+    - <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+    - |
+      <script>
+        window.MathJax = {
+          tex: {
+            // 重点 1：让 MathJax 识别 Pandoc 常用的所有定界符
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            processEnvironments: true
+          },
+          options: {
+            // 重点 2：强制 MathJax 扫描带有 'math' 类名的标签（Pandoc 经常生成这个类名）
+            processHtmlClass: 'tex2jax_process|math',
+            enableMenu: true // 确保菜单开启，方便你调试
+          },
+          chtml: {
+            // 重点 3：强制使用 LaTeX 风格字体
+            fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2'
+          },
+          startup: {
+            pageReady: () => {
+              return MathJax.startup.defaultPageReady().then(() => {
+                console.log('MathJax initial typesetting complete');
+              });
+            }
+          }
+        };
+      </script>
 
 post:
   math:
