@@ -17,24 +17,33 @@ math: true
 # 问题模型
 
 常规设置，$N$ arms，$T$ rounds，对于 arm $i$，随机奖励 $f_i(t)\sim P_i$。一轮最多选择 $m$ arms，动作集合 
+
 $$
 \mathcal{A}=\{\boldsymbol{a}|\boldsymbol{a}\in \{0,1\}^N,\;\|\boldsymbol{a}\|_1\le m\}
 $$
+
 反馈形式是 semi-bandit 的。单轮收益 $R_t\triangleq \sum_{i=1}^N f_i(t)a_i(t)$。
 
 每一轮受到线性约束
+
 $$
 \boldsymbol{g}(\boldsymbol{a}(t))\triangleq [\boldsymbol{g}_1(\boldsymbol{a}(t)),\boldsymbol{g}_2(\boldsymbol{a}(t)),\dots, \boldsymbol{g}_K(\boldsymbol{a}(t))]^\top
 $$
+
 于是得到
+
 $$
 \max \sum_{t=1}^T R_t, \quad \text{s.t.} \; \sum_{t=1}^T \boldsymbol{g}(\boldsymbol{a}(t)) \preccurlyeq \boldsymbol{0}
 $$
+
 并且定义 regret（dynamic regret）
+
 $$
 \text{Reg}_T=\text{OPT}(T)-\mathbb{E}[\sum_{t=1}^T R_t]
 $$
+
 以及约束违背
+
 $$
 \text{Vio}(T)=\sum_{t=1}^T \boldsymbol{g}(\boldsymbol{a}(t))
 $$
@@ -44,6 +53,7 @@ $$
 ### Bandits with Knapsacks（BwK，背包约束）
 
 每次 pull 在获得奖励同时产生资源消耗，设有 $K$ 种资源，每种资源 $k$ 的总预算为 $B_k$，定义资源向量
+
 $$
 \lambda_i = (\lambda_{1,i},\dots,\lambda_{K,i}), \quad \lambda_{k,i}\ge 0
 $$
@@ -66,9 +76,11 @@ $$
 ### Bandits with Fairness Constraints（个体公平约束）
 
 要求每个臂 $i$ 在长期内至少被拉一定比例 $r_i$，形如
+
 $$
 \frac{1}{T} h_i(T) \ge r_i, \quad \forall i
 $$
+
 其中 $h_i(T)$ 是臂 $i$ 的累计拉动次数。可行性约束：
 
 $$
