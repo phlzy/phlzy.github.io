@@ -78,6 +78,7 @@ $$
 从直觉上来看，个体公平约束是对于探索下界的约束
 
 公平约束在本文中被写成：
+
 $$
 \boldsymbol{g}(\boldsymbol{a}(t)) = -\boldsymbol{a}(t) + r
 $$
