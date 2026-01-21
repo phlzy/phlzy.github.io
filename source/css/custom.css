@@ -1,0 +1,19 @@
+/* 1. 强制行间公式使用“巨算符”模式（上下标在上下，而不是右侧） */
+mjx-container[display="true"] mjx-lim {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* 2. 强制公式使用 TeX 字体，并微调字号以匹配图片效果 */
+mjx-container {
+  font-size: 1.05em !important;
+  line-height: 0;
+}
+
+/* 3. 解决 Pandoc 可能导致的缩进不居中问题 */
+.math.display {
+  display: block !important;
+  text-align: center !important;
+  margin: 1.5rem 0 !important;
+}
