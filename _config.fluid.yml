@@ -81,18 +81,18 @@ index:
     # If empty, text based on `subtitle` in hexo config
     text: "Just for fun" # 首页显示的打字机文字
   
-favicon: /img/fluid.png
+favicon: /img/web-app-manifest-512x512.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: /img/fluid.png
+apple_touch_icon: /img/web-app-manifest-512x512.png
 
 #---------------------------
 # 归档页
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/default.png
+  banner_img: /img/dusk.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -103,7 +103,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/dragons.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -132,7 +132,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/dragons.jpg
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -149,7 +149,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/default.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/avatar.png
