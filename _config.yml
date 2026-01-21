@@ -102,3 +102,8 @@ theme: fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# 根目录 _config.yml
+pandoc:
+  # 关键：添加 --mathjax 参数
+  args: ['--mathjax']
