@@ -152,8 +152,8 @@ $$
 > Step 3：如果 comparator 是固定的，telescoping 的时候可以抵消，得到经典的 static regret
 >
 > $$
-> &\sum_{t=1}^T\Big(\|x_t-u_t\|^2-\|x_{t+1}-u_t\|^2\Big)\\
-> =&
+> \sum_{t=1}^T\Big(\|x_t-u_t\|^2-\|x_{t+1}-u_t\|^2\Big)\\
+> =
 > \|x_1-u_1\|^2-\|x_{T+1}-u_T\|^2
 > +\sum_{t=1}^{T-1}\Big(\|x_{t+1}-u_{t+1}\|^2-\|x_{t+1}-u_t\|^2\Big)
 > \tag{4}
@@ -215,9 +215,9 @@ $$
 
 Theorem 14 证明了 UDR 和 CCV 的 bound。这里有一些关键的性质需要提一下
 $$
-u_t=x_t^\star &=& \mathrm{arg}\min_{x\in \mathcal{X}} \tilde{f}_t(x)\\
-&=& \mathrm{arg}\min_{x\in \mathcal{X}_t^\star} \tilde{f}_t(x) \\
-&=& \mathrm{arg}\min_{x\in \mathcal{X}_t^\star} f_t(x)
+u_t=x_t^\star = \mathrm{arg}\min_{x\in \mathcal{X}} \tilde{f}_t(x)\\
+= \mathrm{arg}\min_{x\in \mathcal{X}_t^\star} \tilde{f}_t(x) \\
+= \mathrm{arg}\min_{x\in \mathcal{X}_t^\star} f_t(x)
 $$
 第一步就是 Lemma 12，第二步是因为对于可行解 $x\in \mathcal{X}_t^\star$ 来说 $\tilde{f}_t(x)=f_t(x)$。
 
