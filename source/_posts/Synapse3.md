@@ -1,7 +1,7 @@
 ---
 title: S3-完美匹配
 date: 2021-08-24
-tag: [number theory]
+tag: [graph theory, combinatorial optimization]
 category: [Synapse]
 math: true
 ---
