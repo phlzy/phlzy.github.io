@@ -71,13 +71,13 @@ math: true
 
 ## 测试结果
 
-ChatGPT 5.1
-Gemini 3.0 pro
-Grok 4 thinking
-Kimi K2 thinking
-Qwen3-Max thinking
-deepseek 671b R1
-doubao-seed-1.6-thinking
+- ChatGPT 5.1
+- Gemini 3.0 pro
+- Grok 4 thinking
+- Kimi K2 thinking
+- Qwen3-Max thinking
+- deepseek 671b R1
+- doubao-seed-1.6-thinking
 
 |   | ChatGPT | Gemini | Grok  | Kimi| Qwen  |deepseek |豆包 |
 | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |------------ |

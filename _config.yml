@@ -64,6 +64,10 @@ index_generator:
   per_page: 10
   order_by: -date
 
+archive_generator:
+  per_page: 30     # 归档页面每页显示 50 篇文章
+  yearly: true     # 是否按年归档
+
 # Category & Tag
 default_category: uncategorized
 category_map:
