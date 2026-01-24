@@ -66,9 +66,11 @@ post:
   meta:
     date:
       enable: true
+      type: "both"
       format: "LL"      # 这里的格式可以自定义，LL 通常显示为 2023年5月23日
     updated:
-      enable: true      # <--- 将这里改为 true
+      enable: true      
+      label: "Updated on"
       format: "LL"      # 建议保持一致
 
 # 以下是可选的美化配置，你可以稍后调整
