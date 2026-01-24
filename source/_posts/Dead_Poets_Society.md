@@ -2,7 +2,7 @@
 title: 在不必勇敢的时代，如何理解《死亡诗社》
 date: 2026-01-24
 tags: [critique]
-categories: [critique]
+categories: [Essays]
 math: true
 ---
 

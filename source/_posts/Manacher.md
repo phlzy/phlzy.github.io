@@ -1,8 +1,8 @@
 ---
 title: Manacher's Algorithm
 date: 2020-10-01
-tag: [manacher]
-category: [String]
+tag: [string]
+category: [Algorithm and DataStructure]
 math: true
 ---
 
