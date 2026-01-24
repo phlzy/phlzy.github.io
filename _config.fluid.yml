@@ -63,6 +63,13 @@ post:
         displayMath: [['$$', '$$'], ['\\[', '\\]']]
         # 允许使用复杂的 LaTeX 扩展，渲染图片里的定义符号和花体
         packages: {'[+]': ['ams', 'base', 'configmacros']}
+  meta:
+    date:
+      enable: true
+      format: "LL"      # 这里的格式可以自定义，LL 通常显示为 2023年5月23日
+    updated:
+      enable: true      # <--- 将这里改为 true
+      format: "LL"      # 建议保持一致
 
 # 以下是可选的美化配置，你可以稍后调整
 navbar:
