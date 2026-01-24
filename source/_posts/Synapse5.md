@@ -1,12 +1,14 @@
 ---
-title: 算法数论摘录
+title: S4-算法数论摘录
 date: 2023-05-08
-tag: [math]
-category: [math]
+tag: [number theory]
+category: [Synapse]
 math: true
 ---
 
-数学太差了，很多东西都不会，只能摘录一点能理解的。
+Synapse 是一个专题笔记系列，每一篇的 topic 都是随机的，也许一些看似无关的笔记之间会产生某种联系
+
+<!--more-->
 
 # 质数
 
@@ -132,5 +134,4 @@ $$
 ### 构造
 
 $m$ 有原根存在的充要条件：$m=2,4,p^l,2p^l$（$p$ 为奇质数）。
-
 

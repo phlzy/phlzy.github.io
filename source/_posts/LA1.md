@@ -2,7 +2,7 @@
 title: Matrix Operation
 date: 2022-07-27
 tag: [linear algebra]
-category: [Linear Algebra]
+category: [Mathematical Foundation]
 math: true
 ---
 
@@ -123,7 +123,6 @@ B_{21} & B_{22}
 A_{11}B_{11}+A_{12}B_{21} & A_{11}B_{12}+A_{12}B_{22}\\
 A_{21}B_{11}+A_{22}B_{21} & A_{21}B_{12}+A_{22}B_{22}
 \end{array} \right]
-
 $$
 
 而分块矩阵求逆就很复杂。具体这里就不写了，只提一个小结论：分块对角矩阵是一个分块矩阵，除了主对角线上的分块外，其余全是零分块。这样的矩阵可逆当且仅当对角线上所有矩阵均可逆。
@@ -197,5 +196,4 @@ $$
 - $A$ 的列向量是 $\mathbb{R}^n$ 的基
 - $\text{rank }A=n$
 - $\dim \text{Col }A=n$
-
 

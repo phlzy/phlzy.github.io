@@ -2,7 +2,7 @@
 title: The Missing Part of Your Linear Algebra Course
 date: 2022-07-24
 tag: [linear algebra]
-category: [Linear Algebra]
+category: [Mathematical Foundation]
 math: true
 ---
 
