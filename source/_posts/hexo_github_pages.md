@@ -15,3 +15,4 @@ math: true
 
 `title` 中不要出现 `:` 这个字符
 
+出于未知原因，目前 meta 中的 updated 无法生效

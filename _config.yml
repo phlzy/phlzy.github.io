@@ -67,6 +67,12 @@ index_generator:
 archive_generator:
   per_page: 30     # 归档页面每页显示 50 篇文章
   yearly: true     # 是否按年归档
+  
+category_generator:
+  per_page: 30
+
+tag_generator:
+  per_page: 50
 
 # Category & Tag
 default_category: uncategorized
