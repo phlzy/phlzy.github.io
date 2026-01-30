@@ -2,7 +2,7 @@
 title: Chan's Algorithm
 date: 2024-05-20
 tag: [convex optimization, geometry]
-category: [Algorithm and DataStructure]
+category: [Algorithms]
 math: true
 ---
 

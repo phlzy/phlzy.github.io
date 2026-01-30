@@ -2,7 +2,7 @@
 title: Pushback Lemma
 date: 2026-01-26
 tag: [online learning]
-category: [Algorithms]
+category: [Mathematical Foundation]
 math: true
 ---
 
@@ -144,7 +144,6 @@ $$
 
 $$
 F(\pi)-F(\pi_{\text{opt}})=
-
 \underbrace{\big(h(\pi)-h(\pi_{\text{opt}})-\langle\nabla h(\pi_{\text{opt}}),\pi-\pi_{\text{opt}}\rangle\big)}_{\ge 0}\\
 +\alpha D(\pi|\pi_{\text{opt}})
 +\left\langle \nabla h(\pi_{\text{opt}})+\alpha\nabla D(\pi_{\text{opt}}|\pi_{t-1}),\pi-\pi_{\text{opt}}\right\rangle.

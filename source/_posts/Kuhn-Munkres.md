@@ -1,8 +1,8 @@
 ---
-title: Kuhn–Munkres Algorithm
+title: Kuhn-Munkres Algorithm
 date: 2022-07-22
 tag: [algorithm]
-category: [Algorithm and DataStructure]
+category: [Algorithms]
 math: true
 ---
 

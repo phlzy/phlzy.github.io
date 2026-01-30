@@ -109,7 +109,7 @@ $$
 
 然后利用 Lyapunov 思想，定义这个 drift：
 $$
-\Delta_t=\frac12(q_{t+1}^2-q_t^2) \quad\text{}
+\Delta_t=\frac12(q_{t+1}^2-q_t^2) 
 $$
 
 能在求和时望远镜消掉，只剩末项 $q_{T+1}^2$

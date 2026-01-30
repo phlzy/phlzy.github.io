@@ -2,7 +2,7 @@
 title: 越俎代庖的公式渲染问题
 date: 2026-01-21
 tags: [others]
-categories: [misc]
+categories: [Tutorial]
 math: true
 ---
 

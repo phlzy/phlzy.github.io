@@ -199,7 +199,7 @@ Lemma 11
 $$
 \sum_{t=1}^T(f_t(x_t)-f_t(u_t))\le \sum_{t=1}^T(\tilde{f}_t(x_t)-\tilde{f}_t(u_t))
 $$
-为什么？因为 $\tilde{f}_t(x)\ge f_t(x)$，而 $u_t$ 是可行解，所以 $\mathrm{dist}(x,\mathcal{X}_t^\star)=0$
+为什么？因为 $\tilde{f}_t(x)\ge f_t(x)$，而 $u_t$ 是可行解，所以 $\mathrm{dist}(u_t,\mathcal{X}_t^\star)=0$
 
 Lemma 12
 $$

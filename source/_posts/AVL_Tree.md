@@ -2,7 +2,7 @@
 title: AVL tree
 date: 2020-02-12
 tag: [data structure]
-category: [Algorithm and DataStructure]
+category: [Algorithms]
 math: true
 ---
 
@@ -373,5 +373,4 @@ AVL树的插入、删除、查找都是$\log$级别的复杂度，其中AVL树�
 终于写完了，真是不容易。
 
 ![v2-28825ec8201c53892205bfd8b41c97dd_hd.jpg](https://i.loli.net/2020/02/12/1scLYZaiKRt25N3.jpg)
-
 
