@@ -18,3 +18,10 @@ math: true
 出于未知原因，目前 meta 中的 updated 无法生效
 
 测试。。。。。。
+
+```
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+git config --global --get http.proxy
+```
+
