@@ -1,6 +1,6 @@
 ---
 title: Elixir1-基础语法
-date: 2026-02-19
+date: 2026-02-20
 tag: [Elixir]
 category: [Software Engineering]
 math: true
