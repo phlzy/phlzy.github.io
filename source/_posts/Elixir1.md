@@ -1,5 +1,5 @@
 ---
-title: Elixir0-基础语法
+title: Elixir1-基础语法
 date: 2026-02-19
 tag: [Elixir]
 category: [Software Engineering]
