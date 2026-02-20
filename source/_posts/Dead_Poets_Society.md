@@ -1,5 +1,5 @@
 ---
-title: Title: How to Understand Dead Poets Society in an Age That Does Not Require Courage
+title: How to Understand Dead Poets Society in an Age That Does Not Require Courage
 date: 2026-01-24
 tags: [critique]
 categories: [Essays]

@@ -1,5 +1,5 @@
 ---
-title: The Demon Blade Chronicles: A Long Text That Brought Me Back to Reading
+title: The Demon Blade Chronicles--A Long Text That Brought Me Back to Reading
 date: 2023-05-23
 tags: [critique]
 categories: [Essays]
