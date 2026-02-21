@@ -1,12 +1,12 @@
 ---
-title: Elixir0-基础语法
+title: Elixir0-常识
 date: 2026-02-19
 tag: [Elixir]
 category: [Software Engineering]
 math: true
 ---
 
-试着学一下Elixir
+Elixir 可能是最容易上手的函数式语言，从 Elixir 开始培养函数式手感。
 
 <!--more-->
 
