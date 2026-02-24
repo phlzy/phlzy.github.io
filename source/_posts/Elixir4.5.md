@@ -12,9 +12,9 @@ Elixir 的遗传算法
 
 
 
-这个选择简直完美！遗传算法（Genetic Algorithm, GA）的种群评估天然就是“尴尬并行（Embarrassingly Parallel）”的。等你彻底掌握了纯函数式写法，未来只需要改动**一行代码**，就能让它瞬间变成全核心并发运行的版本。
+遗传算法（Genetic Algorithm, GA）的种群评估天然就是“尴尬并行（Embarrassingly Parallel）”的。等你彻底掌握了纯函数式写法，未来只需要改动**一行代码**，就能让它瞬间变成全核心并发运行的版本。
 
-为了让你专注于练习 Elixir 的核心语法（模式匹配、列表操作、高阶函数、尾递归），我们从 GA 的“Hello World”——**OneMax 问题** 开始。
+GA 的“Hello World”——**OneMax 问题** 开始。
 
 目标非常简单：**让一个由 0 和 1 组成的列表（染色体），通过进化，全部变成 1。**
 
@@ -28,9 +28,9 @@ Elixir 的遗传算法
 
 （在终端运行 `elixir genetic_algorithm.exs` 即可执行）
 
-Elixir
 
-```
+
+```Elixir
 defmodule GeneticAlgorithm do
   @moduledoc """
   纯函数式遗传算法求解 OneMax 问题。
@@ -147,7 +147,7 @@ end
 GeneticAlgorithm.run()
 ```
 
-### 你的核心练习目标：
+### 核心练习目标：
 
 1. **练习 `Enum` 模块：** 抛弃 `for (int i=0; i<n; i++)` 的思维，尝试在 `initialize_population`、`fitness` 和 `mutate` 中使用 `Enum.map`、`Enum.sum` 或列表推导式（`for x <- list, do: ...`）。
 
@@ -162,4 +162,5 @@ GeneticAlgorithm.run()
 
 3. **体会不可变性：** 注意在你的算子中，你不需要（也不可能）去修改传进来的 `population` 列表。你所做的，永远是构造并返回一个**全新的列表**。
 
-这是一个非常纯粹、没有任何外部库依赖的练习。你可以在本地装好 Elixir 环境后直接上手，遇到哪个算子不知道用什么内置函数来实现，或者遇到模式匹配报了错，随时把代码发给我！期待看到你的 Elixir 处女作。
+
+
