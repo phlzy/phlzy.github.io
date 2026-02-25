@@ -1,6 +1,6 @@
 ---
 title: CPP3-简述右值引用与move
-date: 2026-02-25
+date: 2026-02-24
 tag: [cpp]
 category: [Software Engineering]
 math: true
