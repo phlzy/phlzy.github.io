@@ -1,6 +1,6 @@
 ---
-title: Elixir4.5-异常处理
-date: 2026-02-23
+title: Elixir4.5-遗传算法
+date: 2026-02-24
 tag: [Elixir]
 category: [Software Engineering]
 math: true
