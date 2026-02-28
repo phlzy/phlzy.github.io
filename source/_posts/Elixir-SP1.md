@@ -1,12 +1,12 @@
 ---
-title: Elixir4.5-遗传算法
+title: Elixir-SP1-遗传算法
 date: 2026-02-24
 tag: [Elixir]
 category: [Software Engineering]
 math: true
 ---
 
-Elixir 的遗传算法
+特别专题：Elixir 的遗传算法
 
 <!--more-->
 
